@@ -1,0 +1,14 @@
+[package]
+org = "ballerinax"
+name = "health.base"
+version = "1.0.0-snapshot"
+distribution = "2201.4.1"
+authors = ["Ballerina"]
+keywords = ["Healthcare"]
+repository= "https://github.com/ballerina-platform/module-ballerinax-health.base"
+export = [
+    "health.base",
+    "health.base.error",
+    "health.base.message",
+    "health.base.auth"
+]
