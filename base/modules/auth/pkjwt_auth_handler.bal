@@ -17,10 +17,10 @@
 import ballerina/http;
 
 # Client class that handles calling the auth provider and enriching the request.
-public isolated client class PKJWTAuthHandler {
-    private final PKJWTAuthProvider provider;
+public isolated client class PkjwtAuthHandler {
+    private final PkjwtAuthProvider provider;
 
-    public isolated function init(PKJWTAuthConfig config) {
+    public isolated function init(PkjwtAuthConfig config) {
         self.provider = new(config.cloneReadOnly());
     }
 

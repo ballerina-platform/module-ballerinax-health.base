@@ -27,7 +27,7 @@ import ballerina/uuid;
 # + keyFile - Path to private key //todo: add support to accept key store as well  
 # + defaultTokenExpTime - Expiration time (in seconds) of the tokens if the token endpoint response does not contain an `expires_in` field  
 # + clockSkew - Clock skew (in seconds) that can be used to avoid token validation failures due to clock synchronization problems
-public type PKJWTAuthConfig record {|
+public type PkjwtAuthConfig record {|
     string clientId;
     string tokenEndpoint;
     string keyFile;
@@ -36,11 +36,11 @@ public type PKJWTAuthConfig record {|
 |};
 
 # Class that generates and manages the access tokens.
-public isolated class PKJWTAuthProvider {
-    private final PKJWTAuthConfig & readonly config;
+public isolated class PkjwtAuthProvider {
+    private final PkjwtAuthConfig & readonly config;
     private final TokenCache tokenCache;
 
-    public isolated function init(PKJWTAuthConfig config) {
+    public isolated function init(PkjwtAuthConfig config) {
         self.config = config.cloneReadOnly();
         self.tokenCache = new ();
     }
@@ -50,7 +50,7 @@ public isolated class PKJWTAuthProvider {
     }
 }
 
-isolated function retrieveToken(PKJWTAuthConfig config, TokenCache tokenCache) returns string|HealthcareSecurityError {
+isolated function retrieveToken(PkjwtAuthConfig config, TokenCache tokenCache) returns string|HealthcareSecurityError {
     string cachedAccessToken = tokenCache.getAccessToken();
     if cachedAccessToken == "" {
         return retrieveTokenFromEP(config, tokenCache);
@@ -68,7 +68,7 @@ isolated function retrieveToken(PKJWTAuthConfig config, TokenCache tokenCache) r
     }
 }
 
-isolated function retrieveTokenFromEP(PKJWTAuthConfig config, TokenCache tokenCache) returns string|HealthcareSecurityError {
+isolated function retrieveTokenFromEP(PkjwtAuthConfig config, TokenCache tokenCache) returns string|HealthcareSecurityError {
     map<json> sub = {
         "sub": config.clientId
     };
