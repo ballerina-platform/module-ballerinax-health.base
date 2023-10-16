@@ -2,7 +2,7 @@
 org = "ballerinax"
 name = "health.base"
 version = "1.0.4"
-distribution = "2201.6.0"
+distribution = "2201.8.1"
 authors = ["Ballerina"]
 keywords = ["Healthcare"]
 repository= "https://github.com/ballerina-platform/module-ballerinax-health.base"
