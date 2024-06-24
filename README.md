@@ -1,7 +1,7 @@
 Ballerina Health Base
 ==========================
 
-![Daily Build](https://github.com/ballerina-platform/module-ballerinax-health.base/actions/workflows/daily-build.yml/badge.svg)
+![Daily Build](https://github.com/ballerina-platform/module-ballerinax-health.base/actions/workflows/daily-build-base.yml/badge.svg)
 
 
 The Ballerina health base includes some common capabilities used in other health packages. 
